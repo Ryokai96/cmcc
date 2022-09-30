@@ -11,9 +11,6 @@
     "type": "git",
     "url": "git://github.com/Ryokai96/cmcc.git"
   },
-  "files": [
-    "bin"
-  ],
   "dependencies": {
     "commander": "^9.4.0",
     "node-xlsx": "^0.21.0"

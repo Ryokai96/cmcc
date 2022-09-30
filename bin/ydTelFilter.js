@@ -7,13 +7,13 @@
 var xlsx = require('node-xlsx');
 var fs = require('fs');
 var { program } = require('commander');
-var { version } = require('./package.json')
+var { version } = require('../package.json')
 
 program
   .version(version)
   .requiredOption('-s --source <file>', 'Source excel file path')
   .option('-t --target <file>', 'Target excel file path', './ydTel.xlsx')
-  .option('-l --lines', 'How many lines of phone numbers are required in each column of the target excel', 200)
+  .option('-l --lines <integer>', 'How many lines of phone numbers are required in each column of the target excel', 200)
   .parse(process.argv)
 
 var options = program.opts();
@@ -35,16 +35,25 @@ obj[0].data.forEach(x => {
 })
 
 var resultData = new Array();
+// resultData = obj[0].data.filter(x => {
+//   if(reg.test(x[0])) {
+//     return x[0]
+//   }
+// })
 
 var maxLines = options.lines;
 var total = result.length;
 
+console.log("maxLines = %s", maxLines)
+
 var columns = Math.ceil(total/maxLines);
 var rows = Math.ceil(total/columns);
 
-var k = 0;
-for (i = 0; i < rows; i++) {
+console.log("columns = %s, rows = %s", columns, rows);
+
+for (i = 0, k = 0; i < rows; i++) {
   resultData[i] = new Array();
+  // console.log(resultData[i]);
   for (j = 0; j < columns; j++) {
     resultData[i].push(result[k]);
     k++;
