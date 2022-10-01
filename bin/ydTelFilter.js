@@ -35,11 +35,6 @@ obj[0].data.forEach(x => {
 })
 
 var resultData = new Array();
-// resultData = obj[0].data.filter(x => {
-//   if(reg.test(x[0])) {
-//     return x[0]
-//   }
-// })
 
 var maxLines = options.lines;
 var total = result.length;
