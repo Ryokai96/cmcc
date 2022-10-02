@@ -7,10 +7,9 @@
 var xlsx = require('node-xlsx');
 var fs = require('fs');
 var { program } = require('commander');
-var { version } = require('../package.json')
 
 program
-  .version(version)
+  .version("0.0.1")
   .requiredOption('-s --source <file>', 'Source excel file path')
   .option('-t --target <file>', 'Target excel file path', './ydTel.xlsx')
   .option('-l --lines <integer>', 'How many lines of phone numbers are required in each column of the target excel', 200)

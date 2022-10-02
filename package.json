@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "cmcc tools",
   "bin": {
-    "ydTelFilter": "./bin/ydTelFilter.js"
+    "ydTelFilter": "./src/bin/ydTelFilter.js"
   },
   "author": "ryoukai",
   "license": "MIT",
